@@ -1,0 +1,62 @@
+/*style.css*/
+:root {
+  --posX: 1;
+  --posY: 1;
+  --scale: 1;
+  --rotation: 0;
+  --delay: "0.1s";
+}
+
+.arena {
+  position: relative;
+  width: 275px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+button {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+}
+
+.obj1 {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+}
+
+.obj2 {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+
+.attackAnimation {
+  animation: attachAnimation 0.5s ease-in-out backwards;
+}
+
+@keyframes attachAnimation {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  30% {
+    transform: translate(var(--posX), var(--posY)) rotate(var(--rotation)) scale(var(--scale));
+  }
+
+  60% {
+    transform: translate(0, 0) rotate(0deg) scale(var(--scale));
+  }
+  80% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+}
